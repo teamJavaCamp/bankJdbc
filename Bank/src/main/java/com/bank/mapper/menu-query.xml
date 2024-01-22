@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="signUp">
+        INSERT INTO tbl_user(
+        id
+        ,pwd
+        ,name
+        ,age
+        ,gender
+        ,account
+        ,balance
+        )
+        VALUES(
+        ?
+        ,?
+        ,?
+        ,?
+        ,?
+        ,?
+        ,?
+        )
+    </entry>
+
+    <entry key="getMember">
+        SELECT *
+          FROM tbl_user
+         WHERE id = ?
+    </entry>
+
+    <entry key="checkAccount">
+        SELECT account
+          FROM tbl_user
+    </entry>
+
+    <entry key="SignIn">
+        SELECT *
+        FROM tbl_user
+        WHERE id=?
+        AND pwd=?
+    </entry>
+
+    <entry key="showAccount">
+        SELECT account
+                ,balance
+          FROM tbl_user
+         WHERE id=?
+    </entry>
+
+    <entry key="showAllMember">
+        SELECT *
+          FROM tbl_user
+    </entry>
+
+    <entry key="SelectWhichProduct">
+        INSERT INTO tbl_product(id, typee)
+        VALUES( ?, ?)
+    </entry>
+
+    <entry key="SavingsInterestRateAndDuration">
+        INSERT INTO tbl_savings (interest_rate, duration, savings_amount)
+        VALUES (?, ?, ?)
+    </entry>
+
+    <entry key="LoanInterestRateAndDuration">
+        INSERT INTO tbl_loan (interest_rate, duration, loan_amount)
+        VALUES (?, ?, ?)
+    </entry>
+
+    <entry key="checkLoanStatus">
+        SELECT *
+        FROM tbl_loan l
+        RIGHT JOIN tbl_product p ON p.product_id = l.product_id
+        where id = ?
+    </entry>
+
+    <entry key="checkSavingsStatus">
+        SELECT *
+        FROM tbl_savings s
+        RIGHT JOIN tbl_product p ON p.product_id = s.product_id
+        where id =?
+    </entry>
+
+
+
+</properties>

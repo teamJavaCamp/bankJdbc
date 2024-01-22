@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+    <entry key="getBalance">
+        SELECT balance
+          FROM tbl_user
+         WHERE id=?
+    </entry>
+
+    <entry key="updateAccount">
+        UPDATE tbl_user
+           SET balance=?
+         WHERE id=?
+    </entry>
+
+    <entry key="saveHistory">
+        INSERT INTO tbl_history (
+                                    dates
+                                    , id
+                                    , transactions
+                                    , amount
+                                )
+        VALUES (
+                    ?
+                    ,?
+                    ,?
+                    ,?
+                )
+    </entry>
+
+
+</properties>
